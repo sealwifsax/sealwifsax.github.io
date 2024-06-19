@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap">
+    <style>
+        body {
+            background-color: transparent;
+            font-family: 'DotGothic16', sans-serif;
+            
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            
+        
+        }
+        .navbar {
+    display: flex;
+    justify-content: space-evenly;
+        }
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            border-radius: 15px;
+            background-color: #f3f3f3;
+            color: #000;
+            text-decoration: none;
+        
+        }
+        .button img {
+            height: 20px;
+            margin-right: 10px;
+        }
+.header-image {
+    width: 50px; /* adjust as needed */
+    height: auto; /* maintain aspect ratio */
+}
+.scrolling-background {
+  position: absolute;
+  bottom: 0; /* start from the bottom */
+  left: 0;
+  width: 100%; /* make it twice as wide */
+  height: 100vh;
+  background-image: url('images/moon.png');
+  background-size: 200px 200px; /* adjust this to change the size of the image */
+  animation: movingBackground 14s linear infinite;
+  z-index: -1;
+}
+
+@keyframes movingBackground {
+  0% { background-position: 0 100%; } /* start from the bottom left */
+  100% { background-position: 100% 0; } /* move to the top right */
+}
+.button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh; /* adjust this to change the vertical position of the button */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><img class="header-image" src="images/sealsax.png" alt="Sealwifsax"> Seal Wif Sax (SWX)</h1>
+    </div>
+    <div class="button-container">
+        <a href="index.html" class="button">Back</a>
+    </div>
+    <div style="padding: 0 45px;">
+        <p> We are committed to providing the highest level of transparency and security to our investors. We understand that trust is the foundation of any successful venture, especially in the cryptocurrency space. That is why we offer a bold rug-free guarantee. We assure you that your investment is secure and that we have implemented rigorous measures to protect your funds. In the highly unlikely event that our project does get rugged (which we assure you will not happen), I personally pledge to take full responsibility.I will shower in my own piss and personally fly out to meet every single investor to hand them their money back.
+
+            This may sound extreme, but we believe in going above and beyond to ensure your confidence in us. We want you to feel secure and confident that your funds are in safe hands. Our ultimate goal is to build a community based on trust, transparency, and accountability. Your satisfaction and trust are our top priorities, and we will stop at nothing to guarantee the safety and success of your investment.</p>
+        <H2>Sincerely, </H2>
+        <H2>the SealWifSax team </H2>
+    </div>
+    <div class="scrolling-background"></div>
+</body>
+</html>
