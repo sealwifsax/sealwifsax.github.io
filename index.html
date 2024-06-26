@@ -75,7 +75,6 @@
     padding: 25px; /* add padding here */
     padding-bottom: 56.25%; /* maintain the aspect ratio */
     overflow: hidden;
-    
 }
 
 .video-container iframe {
@@ -90,16 +89,28 @@ p {
     padding-right: 45px;
     padding-bottom: 50px;
 }
-h4{
-    padding-left: 45px;
-    padding-right: 45px;
-    padding-bottom: 30px;
-    padding-top: 50px;
+.countdown-container {
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight:900;
+    color: #000000;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #8f0000;
 
-    color: #000;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+    width: 80%;
 }
+
+.countdown-label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight:900;
+    color: #000000;
+}
+
+
     </style>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Seal Wif Sax (SWX)</title>
@@ -124,10 +135,48 @@ h4{
         
        
     </div>
-    <h4>    We are gearing up to hit our market cap requirement on Moonshot. With strong community backing and the fast, low-cost transactions of Solana, we are on track to make it to the moon 🚀🚀🚀. We will also be listed on Raydium in the future, boosting our visibility and accessibility. 🚀🚀</h4>
+
+    <div class="countdown-container">
+        <div class="countdown-label">Time Till Launch:</div>
+        <div id="countdown"></div>
+    </div>
+    
+    
 <div class="video-container">
     <iframe src="https://www.youtube.com/embed/-vQRfdXNRdc?si=RWiv3NuoHvPylNyO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 <div class="scrolling-background"></div>
+
+<script>
+    function updateCountdown() {
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonth = now.getMonth();
+        const currentDate = now.getDate();
+        const targetTime = new Date(currentYear, currentMonth, currentDate, 14, 0, 0); // 1:00 PM today
+
+        if (now > targetTime) {
+            // If the current time is past 1:00 PM, set the target to 1:00 PM tomorrow
+            targetTime.setDate(targetTime.getDate() + 1);
+        }
+
+        const totalSeconds = (targetTime - now) / 1000;
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = Math.floor(totalSeconds % 60);
+
+        document.getElementById('countdown').innerText =
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+
+    // Initial update
+    updateCountdown();
+</script>
+
+
+
 </body>
 </html>
